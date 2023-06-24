@@ -1,0 +1,26 @@
+.map {
+  :global(.leaflet-control-attribution) {
+    display: none !important;
+  }
+  :global(.leaflet-control-zoom) {
+    display: none;
+  }
+  width: calc(100vw - 350px);
+  height: calc(100vh - 200px);
+  border-radius: 20px;
+  :global(.leaflet-popup-content-wrapper) {
+    background: #2d2d2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+  }
+  :global(.leaflet-popup-tip) {
+    display: none;
+  }
+}
+.polygon {
+  border-radius: 20px;
+  stroke-linecap: square;
+}

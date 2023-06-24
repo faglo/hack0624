@@ -1,0 +1,118 @@
+.root {
+  display: flex;
+  background: #2d2d2d;
+  border-radius: 30px;
+  padding: 6px;
+  overflow-x: auto;
+  gap: 14px;
+}
+
+.category {
+  z-index: 1;
+  display: flex;
+  gap: 14px;
+  width: 300px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  background-color: transparent;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfdcd2;
+  transition: all 1s ease;
+  .count {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #494949;
+    height: 100%;
+    width: 32px;
+    border-radius: 16px;
+    color: #d7d7d7;
+    font-size: 20px;
+  }
+}
+.activeCategory {
+  transition: background-color 1s ease-in-out;
+  background-color: #d7d7d7;
+  border-radius: 20px;
+}
+
+.active {
+  transition: all 0.3s ease-in-out;
+}
+
+.card {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  align-items: stretch;
+  justify-content: space-between;
+  background-color: #222;
+  padding: 12px;
+  border-radius: 20px;
+  .icon {
+    width: 30px;
+    height: 30px;
+    background: #b4e1364d;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  .cardTitle {
+    color: #fff;
+    font-size: 12px;
+  }
+  .dateContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 8px;
+    border-radius: 30px;
+    background: #626262;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50px;
+    background: #fbf8ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d2d2d;
+    margin-left: auto;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  height: calc(100vh - 200px);
+}
+
+.decoration {
+  position: absolute;
+  right: calc(40px);
+  bottom: -10px;
+  height: calc(100vh - 200px);
+  z-index: 0;
+  width: 320px;
+  height: 420px;
+}

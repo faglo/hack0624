@@ -1,0 +1,84 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.smallCard {
+  width: 204px;
+  height: 204px;
+  background: #2d2d2d;
+  border-radius: 20px;
+}
+
+.mediumCard {
+  width: 424px;
+  height: 204px;
+  background: #2d2d2d;
+  border-radius: 20px;
+}
+
+.bigCard {
+  width: 424px;
+  height: 424px;
+  background: #2d2d2d;
+  border-radius: 20px;
+  display: flex;
+  padding: 20px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .header {
+    display: flex;
+    color: #fff;
+    text-align: right;
+    font-size: 32px;
+    font-weight: 500;
+    margin-right: auto;
+    left: 0;
+    width: 100%;
+  }
+  .wines {
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+    .wine {
+      transition: all 0.3s linear;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: all 0.3s linear;
+      }
+      object-fit: cover;
+      &:nth-child(1) {
+        display: flex;
+        margin-top: 90px;
+      }
+      &:nth-child(2) {
+        display: flex;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+.leftCol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.rightCol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.innerImage {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
