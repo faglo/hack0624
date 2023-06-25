@@ -15,8 +15,8 @@ export const Dashboard: FunctionComponent<
   IDashboardProps
 > = (): JSX.Element => {
   const [location, setLocation] = useLocation()
-  const onWineClick = () => {
-    setLocation('/wine/1')
+  const onWineClick = (wid: number) => {
+    setLocation(`/wine/${wid}}`)
   }
   return <div className={styles.root}>
     <div className={styles.leftCol}>
@@ -48,9 +48,9 @@ export const Dashboard: FunctionComponent<
           Вино
         </div>
         <div className={styles.wines}>
-          <img src={wine2} alt="wine" className={styles.wine} onClick={onWineClick} />  
-          <img src={wine2} alt="wine" className={styles.wine} onClick={onWineClick} />
-          <img src={wine2} alt="wine" className={styles.wine} onClick={onWineClick} />
+          <img src={wine2} alt="wine" className={styles.wine} onClick={() => onWineClick(2)} />  
+          <img src={wine2} alt="wine" className={styles.wine} onClick={() => onWineClick(3)} />
+          <img src={wine2} alt="wine" className={styles.wine} onClick={() => onWineClick(4)} />
         </div>
       </div>
       <div className={styles.mediumCard}>
