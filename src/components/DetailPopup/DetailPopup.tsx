@@ -27,7 +27,7 @@ export const DetailPopup: FunctionComponent<
           Предполагаемый урожай
         </div>
         <div className={styles.value}>
-          {Math.floor(predicts?.output)}
+          {Math.floor(predicts?.output)} тонн
         </div>
       </div>
     </div>

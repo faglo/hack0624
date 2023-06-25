@@ -9,10 +9,9 @@ import labIcon from '@/assets/icons/lab.svg'
 import personIcon from '@/assets/icons/person.svg'
 import arrowIcon from '@/assets/icons/arrow.svg'
 import decorPic from '@/assets/images/bg.png'
-import moment from 'moment'
-import 'moment/locale/ru' 
 import { MdCalendarToday } from 'react-icons/md'
 import cs from 'classnames'
+import { convertDate } from '@/helpers'
 
 
 const Column = (props: {
@@ -60,7 +59,7 @@ const Card = (props: {
         <div className={styles.cardTitle}>{props.title}</div>
         <div className={styles.dateContainer}>
           <MdCalendarToday size={18}/>
-          {moment(props.createdAt).format("DD MMM YYYY")}
+          {convertDate(props.createdAt)}
         </div>
       </div>
       <div className={styles.description}>

@@ -3,7 +3,6 @@ import { IWineHistoryProps } from './WineHistory.d'
 import styles from './WineHistory.module.scss'
 import backIcon from '@/assets/icons/back.svg'
 import bigWinePic from '@/assets/images/bigwine.png'
-import moment from 'moment'
 import { MdCalendarToday } from 'react-icons/md'
 import checkedIcon from '@/assets/icons/check.svg'
 import uncheckedIcon from '@/assets/icons/uncheck.svg'
@@ -11,6 +10,7 @@ import { getWineByID, getWines } from '@/API/Wines'
 import { WineStage } from '@/API/models/Wine'
 import { useLocation } from 'wouter'
 import cs from 'classnames'
+import { convertDate } from '@/helpers'
 
 export const WineHistory: FunctionComponent<
   IWineHistoryProps
@@ -43,7 +43,7 @@ export const WineHistory: FunctionComponent<
         <span>«Палитра Шато де Талю» белое</span>
         <div className={styles.dateContainer}>
           <MdCalendarToday size={18}/>
-          {moment(stages[0].started_at).locale('ru').format("DD MMMM YYYY")}
+          {convertDate(stages[0].started_at)}
         </div>
       </div>
       <div className={styles.content}>
@@ -71,7 +71,7 @@ export const WineHistory: FunctionComponent<
                     <span className={cs(styles.main, {
                       [styles.latest]: stage.last
                     })}>{stage.status}</span>
-                    <span>{moment(stage.started_at).locale('ru').format("DD MMM YYYY")}</span>
+                    <span>{convertDate(stage.started_at, true)}</span>
                   </div>
                 )
               } else {
