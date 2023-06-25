@@ -1,7 +1,7 @@
 .root {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   justify-content: space-between;
+  flex-direction: row;
   gap: 20px;
 }
 
@@ -107,6 +107,8 @@
 .leftCol {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
   gap: 16px;
 }
 
