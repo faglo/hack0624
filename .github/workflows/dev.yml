@@ -1,0 +1,16 @@
+name: Development Compose CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  run:
+    runs-on: 4g
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and run docker-compose
+        run: docker-compose -f docker-compose.dev.yml up --build -d

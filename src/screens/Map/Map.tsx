@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react'
 import { getPoints } from '@/API'
 import IPoint from '@/API/models/Point'
 import { DetailPopup } from '@/components/DetailPopup'
-import { Rectangle } from 'react-leaflet/Rectangle'
 import ICell from '@/API/models/Cell'
 import { getCells } from '@/API/Cells'
 
@@ -51,7 +50,7 @@ export const Map = () => {
       >
         {
           (currentData) &&
-          <DetailPopup data={currentData} />
+          <DetailPopup data={currentData} onClose={() => setCurrentData(null)} />
         }
           
           <TileLayer

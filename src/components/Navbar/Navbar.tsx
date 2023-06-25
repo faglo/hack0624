@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import {NavbarProps, NavbarLink} from './Navbar.d'
 import styles from './Navbar.module.scss'
-import { Link } from 'wouter'
+import { Link, useLocation } from 'wouter'
 import logo from '@/assets/logo.svg'
 import { MdOutlineNotificationsNone, MdCalendarMonth } from 'react-icons/md'
 import profilePic from '@/assets/images/image-1.png'
@@ -67,6 +67,8 @@ export const Navbar: FC<NavbarProps> = ({
   children,
   links
 }) => {
+  const [location, setLocation] = useLocation()
+  if (location.includes('wine/confirm')) return <>{children}</>
   return (
     <div className={styles.root}>
       <div className={styles.rootGrid}>

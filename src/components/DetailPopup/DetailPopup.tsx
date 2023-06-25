@@ -4,7 +4,7 @@ import styles from './DetailPopup.module.scss'
 
 export const DetailPopup: FunctionComponent<
   IDetailPopupProps
-> = ({data}): JSX.Element => {
+> = ({data, onClose}): JSX.Element => {
   return <div className={styles.root}>
     <img src={data.urls[0]} className={styles.img}/>
     <div className={styles.title}>
@@ -13,5 +13,6 @@ export const DetailPopup: FunctionComponent<
     <div className={styles.desc}>
       {data.desc}
     </div>
+    <div onClick={onClose}>Закрыть</div>
   </div>
 }

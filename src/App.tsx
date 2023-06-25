@@ -3,6 +3,8 @@ import { Route } from "wouter";
 import { useLocation } from "wouter";
 import { MdOutlineWineBar, MdOutlineMap, MdOutlineSettings, MdOutlineTask } from 'react-icons/md';
 import { Dashboard, Kanban, Map, Settings } from "@/screens";
+import { WineHistory } from "./components/WineHistory";
+import { WineHistoryConfirm } from "./screens/WineHistoryConfirm";
 
 function App() {
   const avatarURL = 'https://s3-alpha-sig.figma.com/img/281b/0b49/964720a17109c22857c8b5e3a5637600?Expires=1687737600&Signature=GWINJwmrW6z9a3vLFwh16VNivwgeqYrnI2hb42~DKFntF7sQ973gNQcbwiPmTCmDik8bV7wLwP-NunOtRYLilX6t5vSRtsdGnkuo8fRTtSWjyaIPD7KQ99V0PIOFSS5Y~e9sHPGDVj2mXIGkWO1OcwjiZcx64tyiPA1odNDg1Wb0SdPanjSNGVZXq96RUWh-QdKxoSIli~KgwUGgIZrnYIjopPmezGOwGQyll~hY93ajq8TkYuFpqUnqLvVN3KE6J1AIXgzFEFQYkdT5HlO5y2zMnKMS3U91M~uZbM6ZxMEGVg0cUMX9cVSsVyO-8mJCE8HfMMap1CPXomq7kXTd7A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
@@ -40,15 +42,6 @@ function App() {
             style: getIconStyles((location === "/kanban"))
           },
           { 
-            label: "Настройки", 
-            url: "/settings", 
-            icon: <MdOutlineSettings 
-              size={20}
-              style={getIconStyles(location === "/settings")}
-            />,
-            style: getIconStyles((location === "/settings"))
-          },
-          { 
             label: "Карта", 
             url: "/map", 
             icon: <MdOutlineMap 
@@ -71,6 +64,12 @@ function App() {
         </Route>
         <Route path="/settings">
           <Settings/>
+        </Route>
+        <Route path="/wine/:id">
+          {(params) => <WineHistory wineID={params ? (params as any).id : 1}/>}
+        </Route>
+        <Route path="/wine/confirm/:id">
+          {(params) => <WineHistoryConfirm wineID={params ? (params as any).id : 1}/>}
         </Route>
       </Navbar>
     </>

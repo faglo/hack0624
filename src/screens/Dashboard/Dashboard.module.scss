@@ -2,20 +2,57 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .smallCard {
-  width: 204px;
+  width: 40%;
   height: 204px;
   background: #2d2d2d;
   border-radius: 20px;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .decoration {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: -10px;
+    margin-left: auto;
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.2);
+  }
+  span {
+    display: flex;
+    align-items: center;
+  }
+  .botif {
+    margin-left: auto;
+    color: #c13131;
+  }
 }
 
 .mediumCard {
-  width: 424px;
+  width: 100%;
+  box-sizing: border-box;
   height: 204px;
   background: #2d2d2d;
   border-radius: 20px;
+  overflow: hidden;
+  .innerImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transition: all 0.1s linear;
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.1s linear;
+    }
+  }
 }
 
 .bigCard {
@@ -29,6 +66,8 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  width: 100%;
+  align-items: center;
   .header {
     display: flex;
     color: #fff;
@@ -43,7 +82,9 @@
     position: relative;
     display: flex;
     margin-top: 20px;
+
     .wine {
+      animation: popup s ease-in-out infinite;
       transition: all 0.3s linear;
       &:hover {
         cursor: pointer;
@@ -73,12 +114,4 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-}
-
-.innerImage {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
 }

@@ -6,18 +6,41 @@ import cardImage2 from '@/assets/images/image-13.png'
 import wine1 from '@/assets/images/wine1.png'
 import wine2 from '@/assets/images/wine2.png'
 import wine3 from '@/assets/images/wine3.png'
+import decwine from '@/assets/images/decwines.png'
+import decbarrels from '@/assets/images/decbarrels.png'
+import deckrasivo from '@/assets/images/deckrasivo.png'
+import { useLocation } from 'wouter'
 
 export const Dashboard: FunctionComponent<
   IDashboardProps
 > = (): JSX.Element => {
+  const [location, setLocation] = useLocation()
+  const onWineClick = () => {
+    setLocation('/wine/1')
+  }
   return <div className={styles.root}>
     <div className={styles.leftCol}>
-      <div className={styles.smallCard} />
-      <div className={styles.smallCard}/>
+      <div className={styles.smallCard}>
+        <span className={styles.header}>Лаборатория <span className={styles.botif}>3</span></span>
+        <img
+          className={styles.decoration}
+          src={decwine}
+        />
+      </div>
+      <div className={styles.smallCard}>
+        <span className={styles.header}>Склад</span>
+        <img
+          className={styles.decoration}
+          src={decbarrels}
+        />
+      </div>
       <div className={styles.mediumCard}>
         <img src={cardImage} alt="card" className={styles.innerImage} />
       </div>
-      <div className={styles.mediumCard} />
+      <div className={styles.mediumCard}>
+
+        <img src={deckrasivo} alt="card" className={styles.innerImage} />
+      </div>
     </div>
     <div className={styles.rightCol}>
       <div className={styles.bigCard}>
@@ -25,9 +48,9 @@ export const Dashboard: FunctionComponent<
           Вино
         </div>
         <div className={styles.wines}>
-          <img src={wine1} alt="wine" className={styles.wine} />
-          <img src={wine2} alt="wine" className={styles.wine} />
-          <img src={wine3} alt="wine" className={styles.wine} />
+          <img src={wine2} alt="wine" className={styles.wine} onClick={onWineClick} />  
+          <img src={wine2} alt="wine" className={styles.wine} onClick={onWineClick} />
+          <img src={wine2} alt="wine" className={styles.wine} onClick={onWineClick} />
         </div>
       </div>
       <div className={styles.mediumCard}>
