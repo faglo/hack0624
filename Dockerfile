@@ -5,6 +5,6 @@ COPY . /app
 WORKDIR /app
 
 RUN yarn install --frozen-lockfile --non-interactive --link-duplicates
-RUN yarn build
+RUN npx vite build
 
 CMD ["npx", "servor", "dist", "index.html", "8000"]
