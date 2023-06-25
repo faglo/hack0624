@@ -8,3 +8,9 @@ export default interface ICell {
   point3: [number, number]
   point4: [number, number]
 }
+
+export interface IPredict {
+  latitude: number;
+  longitude: number;
+  output: number;
+}

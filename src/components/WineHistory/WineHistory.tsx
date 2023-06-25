@@ -10,6 +10,7 @@ import uncheckedIcon from '@/assets/icons/uncheck.svg'
 import { getWineByID, getWines } from '@/API/Wines'
 import { WineStage } from '@/API/models/Wine'
 import { useLocation } from 'wouter'
+import cs from 'classnames'
 
 export const WineHistory: FunctionComponent<
   IWineHistoryProps
@@ -67,7 +68,9 @@ export const WineHistory: FunctionComponent<
               if (stage.started_at) {
                 return(
                   <div className={styles.stage} key={stage.id}>
-                    <span className={styles.main}>{stage.status}</span>
+                    <span className={cs(styles.main, {
+                      [styles.latest]: stage.last
+                    })}>{stage.status}</span>
                     <span>{moment(stage.started_at).locale('ru').format("DD MMM YYYY")}</span>
                   </div>
                 )
