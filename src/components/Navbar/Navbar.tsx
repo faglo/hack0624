@@ -74,7 +74,7 @@ export const Navbar: FC<NavbarProps> = ({
       <div className={styles.rootGrid}>
         <div className={styles.header}>
           <Buttons />
-          <img src={logo as string} alt="logo" />
+          <h2>QualityVision</h2>
           <Profile 
             name="Мария Иванова"
             city="Краснодар"
