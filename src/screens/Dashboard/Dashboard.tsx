@@ -16,7 +16,7 @@ export const Dashboard: FunctionComponent<
 > = (): JSX.Element => {
   const [location, setLocation] = useLocation()
   const onWineClick = (wid: number) => {
-    setLocation(`/wine/${wid}}`)
+    setLocation(`/wine/${wid}`)
   }
   return <div className={styles.root}>
     <div className={styles.leftCol}>
